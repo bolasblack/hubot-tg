@@ -38,7 +38,7 @@ class TelegramAdapter extends Adapter
     message = new TextMessage user, message.text, message.id
     @connection.markAllReaded user.name
     @robot.receive message, =>
-      @connection.stopTyping envelope.user.name
+      @connection.stopTyping user.name
 
 exports.use = (robot) ->
   new TelegramAdapter robot
