@@ -36,7 +36,7 @@ class TelegramAdapter extends Adapter
     room = if to.type is 'chat' then to.print_name else null
     user = new User from.id, extend(name: from.print_name, room: room, from)
     message = new TextMessage user, message.text, message.id
-    @connection.markLastMessageReaded from.name
+    @connection.markAllReaded user.name
     @robot.receive message, =>
       @connection.stopTyping envelope.user.name
 
