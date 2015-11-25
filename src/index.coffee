@@ -34,6 +34,8 @@ class TelegramAdapter extends Adapter
 
   _startWorking: =>
     @emit 'connected'
+    @connection.contacts.map (contact) =>
+      @robot.brain.userForId contact.id, extend(name: contact.print_name, contact)
     @connection.on 'message', @_onReceiveMessage
 
   _onReceiveMessage: (message) =>
