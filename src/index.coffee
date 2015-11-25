@@ -27,8 +27,14 @@ class TelegramAdapter extends Adapter
 
   run: ->
     tgapi.connect (@connection) =>
-      @emit 'connected'
-      @connection.on 'message', @_onReceiveMessage
+      if @connection.contacts
+        @_startWorking()
+      else
+        @connection.once 'contacts', @_startWorking
+
+  _startWorking: =>
+    @emit 'connected'
+    @connection.on 'message', @_onReceiveMessage
 
   _onReceiveMessage: (message) =>
     {from, to} = message
