@@ -24,7 +24,7 @@
   "dependencies": {
     "coffee-script": "1.10.0"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "hubot": ">=2.0"
   }
 }
