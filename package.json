@@ -4,6 +4,7 @@
   "description": "Telegram adapter for hubot",
   "main": "index.js",
   "scripts": {
+    "postinstall": "./telegram-cli.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
