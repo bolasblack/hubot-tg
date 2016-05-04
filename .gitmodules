@@ -1,0 +1,3 @@
+[submodule "telegram-cli-wrapper"]
+	path = telegram-cli-wrapper
+	url = https://github.com/bolasblack/telegram-cli-wrapper.git
