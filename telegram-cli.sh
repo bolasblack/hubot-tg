@@ -1,5 +1,5 @@
 if [ -d telegram-cli-wrapper ]; then
-  git clone --recursive git@github.com:bolasblack/telegram-cli-wrapper.git
+  git clone --recursive https://github.com/bolasblack/telegram-cli-wrapper.git
 else
   git submodule --recursive update
 fi
