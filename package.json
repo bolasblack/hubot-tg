@@ -4,7 +4,7 @@
   "description": "Telegram adapter for hubot",
   "main": "index.js",
   "scripts": {
-    "postinstall": "git submodule update && cd telegram-cli-wrapper && ./compile-dependencies.sh",
+    "postinstall": "cd telegram-cli-wrapper && ./compile-dependencies.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
