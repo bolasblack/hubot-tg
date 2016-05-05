@@ -1,5 +1,5 @@
 {Adapter, TextMessage, User} = require "hubot"
-tgapi = require 'telegram-cli-nodejs'
+tgapi = require '../telegram-cli-wrapper'
 
 extend = (dst, src) ->
   Object.keys(src).forEach (key) ->
