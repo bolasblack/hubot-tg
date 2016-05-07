@@ -11,6 +11,10 @@ class TelegramAdapter extends Adapter
     unless process.env.TELEGRAM_PHONE_NUMBER
       throw Error 'Configuration TELEGRAM_PHONE_NUMBER is required'
 
+    setInterval =>
+      @connection?.executeCommand('main_session')
+    , 1000
+
     @phoneNumber = process.env.TELEGRAM_PHONE_NUMBER
     @robot.on 'tg:typing', (envelope) =>
       return unless envelope?.user?.name?
