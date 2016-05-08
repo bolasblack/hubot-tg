@@ -12,7 +12,7 @@ class TelegramAdapter extends Adapter
       throw Error 'Configuration TELEGRAM_PHONE_NUMBER is required'
 
     setInterval =>
-      @connection?.executeCommand('main_session')
+      @connection?.executeCommand('main_session', log: false)
     , 1000
 
     @phoneNumber = process.env.TELEGRAM_PHONE_NUMBER
